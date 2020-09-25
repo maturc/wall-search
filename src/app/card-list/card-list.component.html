@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-sm-3 card__container" *ngFor="let image of images">
+    <a href={{image.path}} target="_blank">
+      <img class="card" src={{image.thumbs.small}} alt="" />
+    </a>
+  </div>
+</div>
