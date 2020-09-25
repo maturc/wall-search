@@ -5,8 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiBridgeService {
-  root;
-  corsHeaders;
   //api docs
   //https://wallhaven.cc/help/api
   url: string = "/api/v1/search?apikey=V2rSnX71qCvSyWFtXuABi4WU7bimA6SP&categories=100";
@@ -14,5 +12,4 @@ export class ApiBridgeService {
   getLatest() {
     return this.http.get(this.url);
   }
-
 }
