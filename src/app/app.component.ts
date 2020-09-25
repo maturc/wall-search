@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiBridgeService } from './api-bridge.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'wall-search';
+  constructor() {}
 }
