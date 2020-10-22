@@ -1,1 +1,7 @@
-<app-card-list [images]="images"></app-card-list>
+<app-card-list [images]="images" *ngIf="!isLoading"></app-card-list>
+<div class="d-flex justify-content-center align-items-center spinner" *ngIf="isLoading">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<app-pagination [pages]="pages" (fetchDataEvent)="fetchData($event)"></app-pagination>

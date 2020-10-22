@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiBridgeService } from '../api-bridge.service';
 
 @Component({
@@ -7,18 +7,39 @@ import { ApiBridgeService } from '../api-bridge.service';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+  isLoading: boolean = true;
   images: Array<object> = [];
+  pages: IPages = {
+    current_page: 1,
+    last_page: 1000
+  };
   constructor(private api: ApiBridgeService) {}
   ngOnInit(): void {
-    this.api.getLatest().subscribe( (data: IData) => {
-      //data.meta has page number
-      this.images = data.data;
+    this.fetchData();
+  }
+
+  fetchData(pageNum: number = 1) {
+    this.isLoading = true;
+    this.api.getLatest(pageNum).subscribe( (data: IData) => {
+      this.setState(data);
+      this.isLoading = false;
       console.table(this.images, ["path"]);
-    });    
+      console.log(data);
+    });
+  }
+  setState(data: IData) {
+    this.images = data.data;
+
+    this.pages.current_page = data.meta.current_page;
+    this.pages.last_page    = data.meta.last_page;
   }
 }
 
 interface IData {
   data: Array<object>;
-  meta: Object;
+  meta: IPages
+}
+export interface IPages {
+  current_page: number;
+  last_page: number;
 }
