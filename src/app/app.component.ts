@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ApiBridgeService } from './api-bridge.service';
 
 @Component({
   selector: 'app-root',
