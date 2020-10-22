@@ -1,0 +1,11 @@
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#" (click)="handleClick(pages.current_page-1)">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#" (click)="handleClick(1)"><<</a></li>
+    <ng-template ngFor let-n [ngForOf]="paginationArray">
+      <li class="page-item"><a class="page-link" [class.pageination__item-active]="n === current_page" href="#" (click)="handleClick(n)">{{n}}</a></li>
+    </ng-template>
+    <li class="page-item"><a class="page-link" href="#" (click)="handleClick(pages.last_page)">>></a></li>
+    <li class="page-item"><a class="page-link" href="#" (click)="handleClick(pages.current_page+1)">Next</a></li>
+  </ul>
+</nav>
