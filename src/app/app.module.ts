@@ -8,13 +8,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { CardListComponent } from './card-list/card-list.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    CardListComponent
+    CardListComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
