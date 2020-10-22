@@ -23,8 +23,6 @@ export class HomeComponent implements OnInit {
     this.api.getLatest(pageNum).subscribe( (data: IData) => {
       this.setState(data);
       this.isLoading = false;
-      console.table(this.images, ["path"]);
-      console.log(data);
     });
   }
   setState(data: IData) {
