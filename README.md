@@ -4,6 +4,7 @@
 This is a webapp for finding wallpapers, it uses the [wallhaven api](https://wallhaven.cc/help/api). 
 
 The goal of this project was to help me learn angular, about its components, templates, directives, services, routing, forms, etc.
+
 ![webapp](https://raw.githubusercontent.com/maturc/wall-search/master/preview.jpg)
 
 ## Technologies used:
