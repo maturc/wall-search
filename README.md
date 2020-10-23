@@ -11,7 +11,7 @@ The goal of this project was to help me learn angular, about its components, tem
 * angular
 * typescript
 * node
-* api
+* RESTful API
 * bootstrap
 * sass
 
